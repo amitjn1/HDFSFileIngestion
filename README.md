@@ -5,7 +5,8 @@ Environment
 -	Hadoop sandbox from Hortonworks or Cloudera 
 
 Programming language
--	Pyspark
+-	Pyspark 
+- Spark version 1.6.0
 
 Usecase
 -	Copy data from local filesystem in linux to HDFS file system folder in Hadoop
