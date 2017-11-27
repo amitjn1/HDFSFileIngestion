@@ -13,7 +13,7 @@ POC to copy files to HDFS file system in Hadoop using PySpark
 ```
 $ spark-submit --master yarn-client --name 'sampledata job' \
 --packages com.databricks:spark-csv_2.10:1.2.0 \
-FileIngestionPOC.py /home/training/Downloads/SampleCSV*.csv
+FileIngestionPOC.py /home/pocuser/Downloads/SampleCSV*.csv
 ```
 
 ### Environment 
