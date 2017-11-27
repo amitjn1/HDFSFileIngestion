@@ -9,6 +9,12 @@ POC to copy files to HDFS file system in Hadoop using PySpark
 - Files does not have header, so a custom schema was applied in the program.
 - Program Name: FileIngestionPOC.py
 - Usage: `FileIngestionPOC.py [Path to csv files with file masking]`
+- Execute instructions from the linux command line:
+```
+$ spark-submit --master yarn-client --name 'sampledata job' \
+--packages com.databricks:spark-csv_2.10:1.2.0 \
+FileIngestionPOC.py /home/training/Downloads/SampleCSV*.csv
+```
 
 ### Environment 
 -	Hadoop sandbox from Hortonworks or Cloudera 
@@ -31,8 +37,9 @@ For example:
 [applicationname.py] /home/data/samplefiles/SampleCSVFile*.csv
 -	Program should read all files from the directory that match the file name wild cards.
 -	While processing the data pyspark program should replace the content of one the fields to XXXX for data masking. This should be FullName field in the sample CSV file attached below.
--	Copy modified data to a HDFS directory
+-	Copy modified data to a HDFS directory.
 
 ### Future Improvements
-- Accept JSON file formats
-- Parametrize the list of fields and the fields to be masked
+- Accept JSON file formats.
+- Parametrize the list of fields and the fields to be masked.
+- Parametrize the HDFS target folder location.
