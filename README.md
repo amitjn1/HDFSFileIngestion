@@ -3,12 +3,15 @@ POC to copy files to HDFS file system folder in Hadoop using PySpark
 
 Environment 
 -	Hadoop sandbox from Hortonworks or Cloudera 
+
 Programming language
 -	Pyspark
+
 Usecase
 -	Copy data from local filesystem in linux to HDFS file system folder in Hadoop
 -	Files will be in CSV format
 -	Mask data in one of the column in files, e.g. replace the value of that column with ‘XXXX’
+
 Solution
 -	Write a program in Pyspark which should be executed from command line on Hadoop sandbox with parameter(s) that specifies the directory path and file name wild cards and another parameter that specifies the field number that should be masked.
 For example:
