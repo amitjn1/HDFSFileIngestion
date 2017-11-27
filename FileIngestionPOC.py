@@ -16,7 +16,9 @@ if __name__ == "__main__":
 
 	from pyspark.sql import functions as F
 	from pyspark.sql.types import *   
-# create custom schema as per the file to be ingested
+
+	# create custom schema as per the file to be ingested
+	
 	customSchema = StructType([                                                                                      
 		StructField("RowID", IntegerType()),
 		StructField("Item_Desc", StringType()),
@@ -30,11 +32,11 @@ if __name__ == "__main__":
 		StructField("Field10", StringType())
 	])
 
-# load csv files using the custom schema with spark-csv library from databricks
+	# load csv files using the custom schema with spark-csv library from databricks
 
 	df = sqlContext.read.format("com.databricks.spark.csv").option("header", "false").load("file:" + fileloc, schema=customSchema)
 
-# Mask the FullName field to replace the actual values with X's
+	# Mask the FullName field to replace the actual values with X's
 
 	df = df.withColumn('FullName', F.regexp_replace(df.FullName,'.*$', 'X'))
 
